@@ -1,0 +1,74 @@
+[
+    {
+        "nazwa": "Niaspan",
+        "ilosc": 1,
+        "opis": "Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat",
+        "cena": 2.18
+    },
+    {
+        "nazwa": "Lexapro",
+        "ilosc": 10,
+        "opis": "facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et,",
+        "cena": 0.84
+    },
+    {
+        "nazwa": "Azithromycin",
+        "ilosc": 2,
+        "opis": "metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus",
+        "cena": 3.48
+    },
+    {
+        "nazwa": "Clonazepam",
+        "ilosc": 3,
+        "opis": "est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius",
+        "cena": 0.47
+    },
+    {
+        "nazwa": "Lovaza",
+        "ilosc": 2,
+        "opis": "augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada",
+        "cena": 3.36
+    },
+    {
+        "nazwa": "Ciprofloxacin HCl",
+        "ilosc": 4,
+        "opis": "eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla",
+        "cena": 6.35
+    },
+    {
+        "nazwa": "Metformin HCl",
+        "ilosc": 4,
+        "opis": "sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.",
+        "cena": 2.33
+    },
+    {
+        "nazwa": "Furosemide",
+        "ilosc": 1,
+        "opis": "iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy ipsum non",
+        "cena": 9.02
+    },
+    {
+        "nazwa": "Viagra",
+        "ilosc": 2,
+        "opis": "varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate,",
+        "cena": 9.68
+    },
+    {
+        "nazwa": "Gabapentin",
+        "ilosc": 10,
+        "opis": "enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in,",
+        "cena": 2.97
+    },
+    {
+        "nazwa": "Lisinopril",
+        "ilosc": 6,
+        "opis": "libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci,",
+        "cena": 2.18
+    },
+    {
+        "nazwa": "Nasonex",
+        "ilosc": 5,
+        "opis": "tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu",
+        "cena": 8.98
+    }
+]
