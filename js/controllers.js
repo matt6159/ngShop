@@ -42,7 +42,7 @@ myCtrls.controller('items', ['$scope', '$http', function ($scope, $http) {
 
 myCtrls.controller('itemEdit', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
-    $http.get('model/products.json').then(function success(response) {
+    $http.post('model/products.json').then(function success(response) {
        // var data = response.data;
         //  var products = data;
         var products = response.data;
