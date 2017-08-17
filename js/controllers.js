@@ -42,12 +42,12 @@ myCtrls.controller('items', ['$scope', '$http', function ($scope, $http) {
 
 myCtrls.controller('itemEdit', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
-    $http.post('model/products.json').then(function success(response) {
-       // var data = response.data;
+    $http.get('model/products.json').then(function success(response) {
+        // var data = response.data;
         //  var products = data;
         var products = response.data;
-      
-        
+
+
         $scope.product = products[$routeParams.id];
     }).then(function error(response) {
         console.log('Błąd pobrania pliku json');
@@ -94,7 +94,7 @@ myCtrls.controller('users', ['$scope', '$http', function ($scope, $http) {
 myCtrls.controller('userEdit', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
     $http.get('model/users.json').then(function success(response) {
-     
+
         var users = response.data;
 
         $scope.user = users[$routeParams.id];
@@ -117,6 +117,37 @@ myCtrls.controller('userCreate', ['$scope', '$http', function ($scope, $http) {
 
     $scope.createUser = function () {
         console.log($scope.user);
+    };
+
+}]);
+
+myCtrls.controller('orders', ['$scope', '$http', function ($scope, $http) {
+
+    $http.get('model/orders.json').then(function success(response) {
+        var data = response.data;
+        $scope.orders = data;
+
+    }).then(function error(response) {
+        console.log('Błąd pobrania pliku json');
+    });
+
+    $scope.deleteOrder = function (order, $index) {
+
+        // TODO: przesłać dane do api
+        $scope.orders.splice($index, 1);
+        //  console.log( $scope.products[$index]);
+    };
+
+    $scope.changeStatus = function (order, $index) {
+
+        // TODO: przesłać dane do api
+        if (order.status === 0) {
+            console.log(order.status);
+            order.status = 1;
+        } else {
+            order.status = 0;
+        }
+        //  console.log( $scope.products[$index]);
     };
 
 }]);

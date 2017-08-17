@@ -1,74 +1,74 @@
 [
     {
-        "nazwa": "Niaspan",
-        "ilosc": 1,
-        "opis": "Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat",
-        "cena": 2.18
+        "name": "Niaspan",
+        "qty": 1,
+        "desc": "Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat",
+        "price": 2.18
     },
     {
-        "nazwa": "Lexapro",
-        "ilosc": 10,
-        "opis": "facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et,",
-        "cena": 0.84
+        "name": "Lexapro",
+        "qty": 10,
+        "desc": "facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et,",
+        "price": 0.84
     },
     {
-        "nazwa": "Azithromycin",
-        "ilosc": 2,
-        "opis": "metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus",
-        "cena": 3.48
+        "name": "Azithromycin",
+        "qty": 2,
+        "desc": "metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus",
+        "price": 3.48
     },
     {
-        "nazwa": "Clonazepam",
-        "ilosc": 3,
-        "opis": "est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius",
-        "cena": 0.47
+        "name": "Clonazepam",
+        "qty": 3,
+        "desc": "est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius",
+        "price": 0.47
     },
     {
-        "nazwa": "Lovaza",
-        "ilosc": 2,
-        "opis": "augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada",
-        "cena": 3.36
+        "name": "Lovaza",
+        "qty": 2,
+        "desc": "augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada",
+        "price": 3.36
     },
     {
-        "nazwa": "Ciprofloxacin HCl",
-        "ilosc": 4,
-        "opis": "eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla",
-        "cena": 6.35
+        "name": "Ciprofloxacin HCl",
+        "qty": 4,
+        "desc": "eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla",
+        "price": 6.35
     },
     {
-        "nazwa": "Metformin HCl",
-        "ilosc": 4,
-        "opis": "sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.",
-        "cena": 2.33
+        "name": "Metformin HCl",
+        "qty": 4,
+        "desc": "sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.",
+        "price": 2.33
     },
     {
-        "nazwa": "Furosemide",
-        "ilosc": 1,
-        "opis": "iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy ipsum non",
-        "cena": 9.02
+        "name": "Furosemide",
+        "qty": 1,
+        "desc": "iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy ipsum non",
+        "price": 9.02
     },
     {
-        "nazwa": "Viagra",
-        "ilosc": 2,
-        "opis": "varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate,",
-        "cena": 9.68
+        "name": "Viagra",
+        "qty": 2,
+        "desc": "varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate,",
+        "price": 9.68
     },
     {
-        "nazwa": "Gabapentin",
-        "ilosc": 10,
-        "opis": "enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in,",
-        "cena": 2.97
+        "name": "Gabapentin",
+        "qty": 10,
+        "desc": "enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in,",
+        "price": 2.97
     },
     {
-        "nazwa": "Lisinopril",
-        "ilosc": 6,
-        "opis": "libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci,",
-        "cena": 2.18
+        "name": "Lisinopril",
+        "qty": 6,
+        "desc": "libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci,",
+        "price": 2.18
     },
     {
-        "nazwa": "Nasonex",
-        "ilosc": 5,
-        "opis": "tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu",
-        "cena": 8.98
+        "name": "Nasonex",
+        "qty": 5,
+        "desc": "tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu",
+        "price": 8.98
     }
 ]

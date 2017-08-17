@@ -46,6 +46,24 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         controller: 'userCreate',
         templateUrl: 'partials/user-create.html'
     });
+    
+    // ================== Orders ====================
+
+
+    $routeProvider.when('/orders', {
+        controller: 'orders',
+        templateUrl: 'partials/orders.html'
+    });
+    /* edycja zbędna
+    $routeProvider.when('/order/edit/:id', {
+        controller: 'orderEdit',
+        templateUrl: 'partials/order-edit.html'
+    });
+
+    $routeProvider.when('/order/create', {
+        controller: 'orderCreate',
+        templateUrl: 'partials/order-create.html'
+    }); */
  
     // ================== Default ====================
     $routeProvider.otherwise({

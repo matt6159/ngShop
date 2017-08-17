@@ -15,8 +15,10 @@
         <div class="col-sm-12">
 
             <div class="alert alert-info" ng-repeat="pp in products | filter : search">
-                <span class="text-capitalize"> {{pp.nazwa}} </span> {{pp.cena | number:2}} zł.
-                <br> {{pp.ilosc}} sztuk
+                <span class="text-capitalize"> {{pp.name}} </span> {{pp.price | number:2}} zł.
+                <br> ilość: {{pp.qty}} 
+                <br>
+                <br> {{pp.desc}}
                 <p>&nbsp;</p>
                 <a href="#!/product/edit/{{$index}}" class="btn btn-default">Edytuj</a>
                 <button ng-click="deleteItem(pp,$index)" class="btn btn-danger pull-right">Usuń</button>
