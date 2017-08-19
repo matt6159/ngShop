@@ -5,7 +5,7 @@
 
 var myCtrlsAdmin = angular.module('myCtrlsAdmin', []);
 
-myCtrlsAdmin.controller('items', ['$scope', '$http', function ($scope, $http) {
+myCtrlsAdmin.controller('items', ['$scope', '$http', 'cart', function ($scope, $http, cart) {
 
     //    console.log();
     /* też jest ok
@@ -30,6 +30,7 @@ myCtrlsAdmin.controller('items', ['$scope', '$http', function ($scope, $http) {
         //  console.log( $scope.products[$index]);
     };
 
+    cart.show();
 }]);
 
 myCtrlsAdmin.controller('itemEdit', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {

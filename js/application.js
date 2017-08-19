@@ -3,7 +3,7 @@
 
 'use strict';
 
-var app = angular.module('app', ['ngRoute', 'myCtrlsNavigation', 'myCtrlsAdmin', 'myCtrlsSite']);
+var app = angular.module('app', ['ngRoute', 'angular-storage', 'myCtrlsNavigation', 'myCtrlsAdmin', 'myCtrlsSite', 'myServices']);
 
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
 
