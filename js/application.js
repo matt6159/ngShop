@@ -3,11 +3,11 @@
 
 'use strict';
 
-var app = angular.module('app', ['ngRoute', 'myCtrls']);
+var app = angular.module('app', ['ngRoute', 'myCtrlsNavigation', 'myCtrlsAdmin', 'myCtrlsSite']);
 
 app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
-    
-    // ================== Products ====================
+
+    // ================== Admin Products ====================
 
     $routeProvider.when('/admin/products', {
         controller: 'items',
@@ -18,22 +18,22 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         controller: 'itemEdit',
         templateUrl: 'partials/admin/product-edit.html'
     });
-    
+
     $routeProvider.when('/admin/product/create', {
         controller: 'itemCreate',
         templateUrl: 'partials/admin/product-create.html'
     });
-    
-    
-    // ================== Users ====================
 
-   
-    
+
+    // ================== Admin Users ====================
+
+
+
     $routeProvider.when('/admin/users', {
         controller: 'users',
         templateUrl: 'partials/admin/users.html'
     });
-    
+
     $routeProvider.when('/admin/user/edit/:id', {
         controller: 'userEdit',
         templateUrl: 'partials/admin/user-edit.html'
@@ -43,8 +43,8 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         controller: 'userCreate',
         templateUrl: 'partials/admin/user-create.html'
     });
-    
-    // ================== Orders ====================
+
+    // ================== Admin Orders ====================
 
 
     $routeProvider.when('/admin/orders', {
@@ -61,12 +61,22 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         controller: 'orderCreate',
         templateUrl: 'partials/admin/order-create.html'
     }); */
-    
+
     $routeProvider.when('/login', {
         controller: 'login',
         templateUrl: 'partials/login.html'
     });
- 
+    // ================== Site Products ====================
+    $routeProvider.when('/products', {
+        controller: 'siteProducts',
+        templateUrl: 'partials/site/products.html'
+    });
+
+    $routeProvider.when('/product/:id', {
+        controller: 'siteProduct',
+        templateUrl: 'partials/site/product.html'
+    });
+
     // ================== Default ====================
     $routeProvider.otherwise({
         redirectTo: '/home'
