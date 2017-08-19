@@ -1,2 +1,2 @@
-# sklepp
+# sklep
 jeśli chodzi o jakość to jakoś to będzie...

@@ -9,61 +9,63 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
     
     // ================== Products ====================
 
-    $routeProvider.when('/products', {
+    $routeProvider.when('/admin/products', {
         controller: 'items',
-        templateUrl: 'partials/products.html'
+        templateUrl: 'partials/admin/products.html'
     });
 
-    $routeProvider.when('/product/edit/:id', {
+    $routeProvider.when('/admin/product/edit/:id', {
         controller: 'itemEdit',
-        templateUrl: 'partials/product-edit.html'
+        templateUrl: 'partials/admin/product-edit.html'
     });
     
-    $routeProvider.when('/product/create', {
+    $routeProvider.when('/admin/product/create', {
         controller: 'itemCreate',
-        templateUrl: 'partials/product-create.html'
+        templateUrl: 'partials/admin/product-create.html'
     });
     
     
     // ================== Users ====================
 
-    $routeProvider.when('/login', {
-        controller: 'login',
-        templateUrl: 'partials/login.html'
-    });
+   
     
-    $routeProvider.when('/users', {
+    $routeProvider.when('/admin/users', {
         controller: 'users',
-        templateUrl: 'partials/users.html'
+        templateUrl: 'partials/admin/users.html'
     });
     
-    $routeProvider.when('/user/edit/:id', {
+    $routeProvider.when('/admin/user/edit/:id', {
         controller: 'userEdit',
-        templateUrl: 'partials/user-edit.html'
+        templateUrl: 'partials/admin/user-edit.html'
     });
 
-    $routeProvider.when('/user/create', {
+    $routeProvider.when('/admin/user/create', {
         controller: 'userCreate',
-        templateUrl: 'partials/user-create.html'
+        templateUrl: 'partials/admin/user-create.html'
     });
     
     // ================== Orders ====================
 
 
-    $routeProvider.when('/orders', {
+    $routeProvider.when('/admin/orders', {
         controller: 'orders',
-        templateUrl: 'partials/orders.html'
+        templateUrl: 'partials/admin/orders.html'
     });
     /* edycja zbędna
     $routeProvider.when('/order/edit/:id', {
         controller: 'orderEdit',
-        templateUrl: 'partials/order-edit.html'
+        templateUrl: 'partials/admin/order-edit.html'
     });
 
     $routeProvider.when('/order/create', {
         controller: 'orderCreate',
-        templateUrl: 'partials/order-create.html'
+        templateUrl: 'partials/admin/order-create.html'
     }); */
+    
+    $routeProvider.when('/login', {
+        controller: 'login',
+        templateUrl: 'partials/login.html'
+    });
  
     // ================== Default ====================
     $routeProvider.otherwise({
