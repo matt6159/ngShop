@@ -6,24 +6,25 @@
             <input type="text" class="form-control" placeholder="szukaj..." ng-model="search">
             <br>
         </div>
-        
+
 
     </div>
     <div class="row">
         <div class="col-sm-12">
 
             <div class="panel panel-default" ng-repeat="pp in products | filter : search">
-               <div class="panel-body">
-                   <h2><span class="label label-warning pull-right">{{pp.price | number:2}} zł.</span></h2>
-               
-                   <h2><a href="#!/product/{{$index}}"> {{pp.name}}</a></h2> 
-                <br> ilość: {{pp.qty}} 
-                <br>
-                <br> {{pp.desc}}
-                <p>&nbsp;</p>
-                <a href="#!/product/{{$index}}" class="btn btn-info">Szczegóły</a>
-                
+                <div class="panel-body">
+                    <h2><span class="label label-warning pull-right">{{pp.price | number:2}} zł.</span></h2>
+
+                    <h2><a href="#!/product/{{$index}}"> {{pp.name}}</a></h2>
+                    <br> ilość: {{pp.qty}}
+                    <br>
+                    <br> {{pp.desc}}
+                    <p>&nbsp;</p>
+                    <a href="#!/product/{{$index}}" class="btn btn-info">Szczegóły</a>
+                    <button ng-click="addToCart(pp)" class="btn btn-primary">Dodaj do koszyka</button>
+
+                </div>
             </div>
         </div>
     </div>
-</div>

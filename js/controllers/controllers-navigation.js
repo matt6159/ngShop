@@ -1,11 +1,11 @@
 /*jslint node: true */
-/*global angular, store */
+/*global angular */
 
 'use strict';
 
 var myCtrlsNavigation = angular.module('myCtrlsNavigation', []);
 
-myCtrlsNavigation.controller('navigation', ['$scope', '$location', 'store', function ($scope, $location, store) {
+myCtrlsNavigation.controller('navigation', ['$scope', '$location', 'cartSrv', function ($scope, $location, cartSrv) {
 
     $scope.navigation = function () {
         if (/^\/admin/.test($location.path())) {
@@ -21,7 +21,7 @@ myCtrlsNavigation.controller('navigation', ['$scope', '$location', 'store', func
     };
 
     
-    store.set('test', 'lalaok');
+
 }]);
 
 

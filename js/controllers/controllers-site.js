@@ -5,7 +5,7 @@
 
 var myCtrlsSite = angular.module('myCtrlsSite', []);
 
-myCtrlsSite.controller('siteProducts', ['$scope', '$http', function ($scope, $http) {
+myCtrlsSite.controller('siteProducts', ['$scope', '$http', 'cartSrv', function ($scope, $http, cartSrv) {
 
     //    console.log();
     /* też jest ok
@@ -29,26 +29,32 @@ myCtrlsSite.controller('siteProducts', ['$scope', '$http', function ($scope, $ht
         $scope.products.splice($index, 1);
         //  console.log( $scope.products[$index]);
     };
+    
+    $scope.addToCart = function (product) {
+        cartSrv.add(product);
+    };
 
 }]);
 
-myCtrlsSite.controller('siteProduct', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+myCtrlsSite.controller('siteProduct', ['$scope', '$http', '$routeParams', 'cartSrv', function ($scope, $http, $routeParams, cartSrv) {
 
     $http.get('model/products.json').then(function success(response) {
         // var data = response.data;
         //  var products = data;
         var products = response.data;
-        
+
 
         $scope.product = products[$routeParams.id];
     }).then(function error(response) {
         console.log('Błąd pobrania pliku json');
     });
 
+    $scope.addToCart = function (product) {
+        cartSrv.add(product);
+    };
+
 
 }]);
-
-
 
 
 myCtrlsSite.controller('siteOrders', ['$scope', '$http', function ($scope, $http) {
@@ -61,6 +67,17 @@ myCtrlsSite.controller('siteOrders', ['$scope', '$http', function ($scope, $http
         console.log('Błąd pobrania pliku json');
     });
 
-    
+
+
+}]);
+
+
+myCtrlsSite.controller('cartCtrl', ['$scope', '$http', 'cartSrv', function ($scope, $http, cartSrv) {
+
+    $scope.cart = cartSrv.show();
+
+    $scope.emptyCart = function () {
+        cartSrv.empty();
+    };
 
 }]);

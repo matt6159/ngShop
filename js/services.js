@@ -5,12 +5,47 @@
 
 var myServices = angular.module('myServices', []);
 
-myServices.factory('cart', ['store', function (store) {
+myServices.factory('cartSrv', ['store', function (store) {
+    var cart;
 
-    var cart = [];
+    if (store.get('cart')) {
+        cart = store.get('cart');
+    } else {
+        cart = [];
+    }
 
     cart.show = function () {
-        console.log('zawartość koszyka');
+        return cart;
+    };
+
+    cart.add = function (product) {
+
+        //        if (!cart.length) {
+        //            product.qty = 0;
+        //            cart.push(product);
+        //        }
+
+        var addNew = true;
+
+        angular.forEach(cart, function (value, key) {
+            if (value.name === product.name) {
+                addNew = false;
+                cart[key].qty = cart[key].qty + 1;
+            }
+        });
+
+        if (addNew) {
+
+            product.qty = 1;
+            cart.push(product);
+
+        }
+        store.set(cart);
+    };
+
+    cart.empty = function () {
+        store.remove('cart');
+        cart.length = 0;
     };
 
     return cart;
