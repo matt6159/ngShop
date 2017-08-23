@@ -29,7 +29,7 @@ myCtrlsSite.controller('siteProducts', ['$scope', '$http', 'cartSrv', function (
         $scope.products.splice($index, 1);
         //  console.log( $scope.products[$index]);
     };
-    
+
     $scope.addToCart = function (product) {
         cartSrv.add(product);
     };
@@ -79,5 +79,27 @@ myCtrlsSite.controller('cartCtrl', ['$scope', '$http', 'cartSrv', function ($sco
     $scope.emptyCart = function () {
         cartSrv.empty();
     };
+
+    $scope.total = function () {
+        var total = 0;
+        angular.forEach($scope.cart, function (item) {
+            total += item.qty * item.price;
+        });
+        return total;
+    };
+
+    $scope.removeItem = function ($index) {
+        $scope.cart.splice($index, 1);
+        cartSrv.update($scope.cart);
+    };
+
+    $scope.setOrder = function ($event) {
+        console.log('zamówienie');
+        // $event.preventDefault();
+    };
+
+    $scope.$watch(function () {
+        cartSrv.update($scope.cart);
+    });
 
 }]);
