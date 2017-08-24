@@ -17,6 +17,14 @@ myServices.factory('cartSrv', ['store', function (store) {
     cart.show = function () {
         return cart;
     };
+    
+    cart.amot = function () {
+        var amot = 0;
+        angular.forEach(cart, function (item) {
+            amot += item.qty;
+        });
+        return amot;
+    };
 
     cart.add = function (product) {
 

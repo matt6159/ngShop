@@ -5,7 +5,7 @@
             <div class="col-sm-12">
 
 
-                <div ng-if="!cart.length" class="alert alert-info">Koszyk jest pusty. Dodaj coś do niego...</div>
+                <div ng-if="!cart.length" class="alert alert-info"><h4>Brak produktów w koszyku</h4></div>
 
                 <div ng-if="cart.length">
 
@@ -23,18 +23,20 @@
                             <tr ng-repeat="item in cart">
                                 <td>{{item.name}}</td>
                                 <td>
-                                    <div class="form-group" style="height:22px;" ng-class="{ 'has-error' : myForm.input{{$index}}.$error.required || myForm.input{{$index}}.$error.number || myForm.input{{$index}}.$error.max || myForm.input{{$index}}.$error.min }">
-                                        <input class="form-control" name="input{{$index}}" style="width:70px;" type="number" ng-model="item.qty" min="1" max="20" required>
+                                    <div class="form-group" style="height:22px;" ng-class="{ 'has-error' : myForm.input{{$index}}.$error.required || myForm.input{{$index}}.$error.integer || myForm.input{{$index}}.$error.max || myForm.input{{$index}}.$error.step || myForm.input{{$index}}.$error.min }">
+                                        <input class="form-control" name="input{{$index}}" style="width:70px;" type="number" ng-model="item.qty" min="1" step ="1" max="20" required>
                                     </div>
                                     <span class="text-danger" ng-show="myForm.input{{$index}}.$error.required">Podaj ilość</span>
                                     <span class="text-danger" ng-show="myForm.input{{$index}}.$error.number">Tylko cyfry</span>
-                                    <span class="text-danger" ng-show="myForm.input{{$index}}.$error.max">Nie posiadamy takiej ilości </span>
+                                    <span class="text-danger" ng-show="myForm.input{{$index}}.$error.max">Nie posiadamy takiej ilości</span>
                                     <span class="text-danger" ng-show="myForm.input{{$index}}.$error.min">Min. ilość to 1</span>
+									<span class="text-danger" ng-show="myForm.input{{$index}}.$error.step">Tylko liczby całkowite</span>
                                 </td>
                                 <td>{{item.price | number:2}} zł</td>
                                 <td><strong>{{item.qty * item.price | number:2}} zł</strong></td>
-                                <td><button class="btn btn-danger btn-xs" ng-click="removeItem( $index )"><strong>&times;</strong>
-<!--                                    <span class="glyphicon glyphicon-trash"></span>-->
+                                <td><button class="btn btn-danger btn-xs" ng-click="removeItem( $index )">
+                                    <span class="glyphicon glyphicon-remove"></span>
+<!--                                    <strong>&times;</strong>-->
                                     </button></td>
                             </tr>
                             <tr>

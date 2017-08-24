@@ -30,7 +30,7 @@ myCtrlsAdmin.controller('items', ['$scope', '$http', function ($scope, $http) {
         //  console.log( $scope.products[$index]);
     };
 
- 
+
 }]);
 
 myCtrlsAdmin.controller('itemEdit', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {

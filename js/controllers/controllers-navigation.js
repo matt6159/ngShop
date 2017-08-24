@@ -19,9 +19,17 @@ myCtrlsNavigation.controller('navigation', ['$scope', '$location', 'cartSrv', fu
     $scope.isActive = function (path) {
         return $location.path() === path;
     };
+    $scope.$watch(function () {
+        $scope.cart = cartSrv.amot();
+        if ($scope.cart > 0) {
+            $scope.cQty = $scope.cart;
 
-    
+        } else {
+            $scope.cQty = null;
+
+        }
+        return $scope.cQty;
+    });
+
 
 }]);
-
-
