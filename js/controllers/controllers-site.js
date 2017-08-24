@@ -1,5 +1,5 @@
 /*jslint node: true */
-/*global angular */
+/*global angular, $, jQuery, alert */
 
 'use strict';
 
@@ -72,7 +72,7 @@ myCtrlsSite.controller('siteOrders', ['$scope', '$http', function ($scope, $http
 }]);
 
 
-myCtrlsSite.controller('cartCtrl', ['$scope', '$http', 'cartSrv', function ($scope, $http, cartSrv) {
+myCtrlsSite.controller('cartCtrl', ['$scope', '$http', '$filter', 'cartSrv', function ($scope, $http, $filter, cartSrv) {
 
     $scope.cart = cartSrv.show();
 
@@ -85,6 +85,7 @@ myCtrlsSite.controller('cartCtrl', ['$scope', '$http', 'cartSrv', function ($sco
         angular.forEach($scope.cart, function (item) {
             total += item.qty * item.price;
         });
+        total = $filter('number')(total, 2);
         return total;
     };
 
@@ -94,8 +95,30 @@ myCtrlsSite.controller('cartCtrl', ['$scope', '$http', 'cartSrv', function ($sco
     };
 
     $scope.setOrder = function ($event) {
-        console.log('zamówienie');
-        // $event.preventDefault();
+        // TODO: zapisz zamówienie w bazie
+        // TODO: sprawdzić czy użytkownik jest zalogowany
+        var loggedId = true;
+
+        if (!loggedId) {
+            $scope.alert = {
+                type: 'warning',
+                msg: 'Zaloguj się, aby złożyć zamówienie.'
+            };
+            $event.preventDefault();
+            return false;
+        }
+
+        console.log($scope.total());
+        console.log($scope.cart);
+
+        $scope.alert = {
+            type: 'success',
+            msg: 'Zamówienie złożone. Trwa przekierowywanie do płatności...'
+        };
+        cartSrv.empty();
+
+        $event.preventDefault();
+        $('#paypalForm').submit();
     };
 
     $scope.$watch(function () {
