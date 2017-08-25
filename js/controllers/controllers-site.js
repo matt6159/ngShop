@@ -126,3 +126,44 @@ myCtrlsSite.controller('cartCtrl', ['$scope', '$http', '$filter', 'cartSrv', fun
     });
 
 }]);
+
+myCtrlsSite.controller('orders', ['$scope', '$http', function ($scope, $http) {
+
+    $http.get('model/orders.json').then(function success(response) {
+        var data = response.data;
+        $scope.orders = data;
+
+    }).then(function error(response) {
+        console.log('Błąd pobrania pliku json');
+    });
+
+
+}]);
+
+myCtrlsSite.controller('login', ['$scope', '$http', function ($scope, $http) {
+
+    //TODO: pobrać dane i przesłać do bazy
+    
+    $scope.input = {};
+    $scope.formSubmit = function () {
+        $scope.errors = {};
+        $scope.errors.login = 'Błędne hasło lub email';
+        console.log($scope.input);
+    };
+
+
+}]);
+
+myCtrlsSite.controller('register', ['$scope', '$http', function ($scope, $http) {
+
+    //TODO: pobrać dane i przesłać do bazy
+    $scope.input = {};
+    $scope.formSubmit = function () {
+        $scope.errors = {};
+        $scope.errors.name = 'Testowy błąd';
+        $scope.submit = true;
+        console.log($scope.input);
+    };
+
+
+}]);
