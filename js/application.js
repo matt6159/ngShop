@@ -88,12 +88,12 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         controller: 'login',
         templateUrl: 'partials/site/login.html'
     });
-    
+
     $routeProvider.when('/register', {
         controller: 'register',
         templateUrl: 'partials/site/register.html'
     });
-    
+
     // ================== Default ====================
     $routeProvider.otherwise({
         redirectTo: '/home'

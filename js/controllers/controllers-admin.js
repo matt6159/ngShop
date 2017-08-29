@@ -1,9 +1,10 @@
 /*jslint node: true */
+/*jslint devel: true */
 /*global angular */
 
 'use strict';
 
-var myCtrlsAdmin = angular.module('myCtrlsAdmin', []);
+var myCtrlsAdmin = angular.module('myCtrlsAdmin', ['angularFileUpload', 'myDirectives']);
 
 myCtrlsAdmin.controller('items', ['$scope', '$http', function ($scope, $http) {
 
@@ -24,6 +25,9 @@ myCtrlsAdmin.controller('items', ['$scope', '$http', function ($scope, $http) {
     });
 
     $scope.deleteItem = function (product, $index) {
+        if (!confirm('Czy na pewno usunąć?')) {
+            return false;
+        }
 
         // TODO: przesłać dane do api
         $scope.products.splice($index, 1);
@@ -33,7 +37,7 @@ myCtrlsAdmin.controller('items', ['$scope', '$http', function ($scope, $http) {
 
 }]);
 
-myCtrlsAdmin.controller('itemEdit', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+myCtrlsAdmin.controller('itemEdit', ['$scope', '$http', '$routeParams', 'FileUploader', function ($scope, $http, $routeParams, FileUploader) {
 
     $http.get('model/products.json').then(function success(response) {
         // var data = response.data;
@@ -51,6 +55,22 @@ myCtrlsAdmin.controller('itemEdit', ['$scope', '$http', '$routeParams', function
         // TODO: przesłać dane do api
         console.log(product);
 
+    };
+    var uploader = $scope.uploader = new FileUploader({
+        url: '' // ścieżka do api obsługującego upload
+    });
+
+    uploader.filters.push({
+        name: 'imageFilter',
+        /*{File|FileLikeObject}*/
+        fn: function (item, options) {
+            var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
+            return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
+        }
+    });
+
+    uploader.onCompleteItem = function (fileItem, response, status, headers) {
+        console.info('onCompleteItem', fileItem, response, status, headers);
     };
 
 }]);
@@ -76,7 +96,9 @@ myCtrlsAdmin.controller('users', ['$scope', '$http', function ($scope, $http) {
     });
 
     $scope.deleteUser = function (user, $index) {
-
+        if (!confirm('Czy na pewno usunąć?')) {
+            return false;
+        }
         // TODO: przesłać dane do api
         $scope.users.splice($index, 1);
         //  console.log( $scope.products[$index]);
@@ -125,7 +147,9 @@ myCtrlsAdmin.controller('orders', ['$scope', '$http', function ($scope, $http) {
     });
 
     $scope.deleteOrder = function (order, $index) {
-
+        if (!confirm('Czy na pewno usunąć?')) {
+            return false;
+        }
         // TODO: przesłać dane do api
         $scope.orders.splice($index, 1);
         //  console.log( $scope.products[$index]);
